@@ -29,4 +29,7 @@ const newpeople = people.map((item) => {
   }
 })
 
-console.log(newpeople);
+const result = document.getElementById("result");
+const names = people.map((person) => `<h2>${person.name}</h2>`).join("");
+
+result.innerHTML = names;
