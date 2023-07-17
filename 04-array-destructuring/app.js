@@ -6,6 +6,7 @@ const people = [
   {name: 'Apudo', age: '21', position: 'Engineer'},
 ]
 
+
 // filter
 const youngPeople = people.filter((person) => {
   // if(person.age < 20){
@@ -22,3 +23,14 @@ const developers = people.filter((dev) => {
 
 const seniorDevelopers = people.filter(dev => dev.position === 'senior developer')
 console.log(seniorDevelopers);
+
+// find
+const fruits = ['apple', 'orange', 'lemon'];
+console.log(fruits);
+
+const lemon = fruits.find(item => item === 'lemon')
+console.log(lemon);
+const oldPerson = people.find((item) => item.age > 25);
+const oldPerson2 = people.filter((item) => item.age > 25);
+console.log(oldPerson);
+console.log(oldPerson2);
