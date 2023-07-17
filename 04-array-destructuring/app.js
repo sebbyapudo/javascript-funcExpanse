@@ -1,29 +1,24 @@
-// faster/easier way to access/unpack variables from arrays
+// Filter - returns new array, can manipulatet the size of an array unlike map
 
-const fruits = ['orange', 'banana', 'lemon'];
-const friends = ['john', 'peter', 'bob', 'anna', 'kelly'];
+const people = [
+  {name: 'Sebby', age: '22', position: 'Developer'},
+  {name: 'Oluoch', age: '19', position: 'Designer'},
+  {name: 'Apudo', age: '21', position: 'Engineer'},
+]
 
-const fruit1 = fruits[0];
-const fruit2 = fruits[1];
-const fruit3 = fruits[2];
+// filter
+const youngPeople = people.filter((person) => {
+  // if(person.age < 20){
+  //   return person;
+  // }
+  // console.log(person);
+  return person.age < 20;
+})
 
-console.log(fruit1, fruit2, fruit3);
+const developers = people.filter((dev) => {
+  console.log(dev.position);
+  return dev.position === "Developer"
+})
 
-const [john, peter, bob, anna, kelly, susan] = friends;
-
-console.log(john, peter, bob);
-console.log(john, peter, bob, anna, kelly);
-console.log(john, peter, bob, anna, kelly, susan);
-console.log(john, peter, bob, anna, kelly, susan);
-// Swap Variables
-
-let first = 'bob';
-let second = 'john';
-
-// let temp = second;
-// second = first;
-// first = temp;
-
-[second, first] = [first, second];
-
-console.log(first, second);
+const seniorDevelopers = people.filter(dev => dev.position === 'senior developer')
+console.log(seniorDevelopers);
