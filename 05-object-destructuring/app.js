@@ -1,30 +1,22 @@
-// faster/easier way to access/unpack values from arrays
+// Reduce
+// Iterates, call back function
+// reduces to a single value - number, array, object
+// 1st parameter - ('acc') Total of all calculations
+// 2nd parameter - ('curr') Current iteration/value
 
-const bob = {
-  first: 'bob',
-  last: 'sanders',
-  city: 'chicago',
-  siblings: {
-    sister: 'jane',
-  },
-};
-const {
-  first: firstName,
-  last,
-  city,
-  zip,
-  siblings: { sister: favoriteSibling },
-} = bob;
-console.log(firstName, last, city, zip, favoriteSibling);
+const staff = [
+  {name: 'Sebby', age: 22, position: 'developer', salary: 1000},
+  {name: 'Jayson', age: 27, position: 'animator', salary: 2000},
+  {name: 'Lewi', age: 22, position: 'animator', salary: 6000},
+  {name: 'Oluoch', age: 22, position: 'Developer', designer: 3000},
+]
 
-// const firstName = bob.first;
-// const lastName = bob.last;
-// const sister = bob.siblings.sister;
+const dailyTotal = staff.reduce((total, person) => {
+  console.log(total);
+  console.log(person.salary);
+  total += person.salary
 
-// console.log(firstName,lastName,sister);
+  return total;
+},0);
 
-function printPerson(person) {
-  console.log(person.first);
-}
-
-printPerson(bob);
+console.log(dailyTotal);
